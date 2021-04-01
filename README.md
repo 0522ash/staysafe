@@ -1,24 +1,53 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Users Table
 
-Things you may want to cover:
+| column             | types  | options     |
+| ------------------ | ------ | ----------- |
+| encrypted_password | string | null: false |
+| email              | string | null: false |
+| username           | string | null: false |
+| name               | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+has_many :places
+has_many :dangers
 
-* Configuration
+## Dangers Table
 
-* Database creation
+| column  | types      | options           |
+| ------- | ---------- | ----------------- |
+| title   | string     | null: false       |
+| content | text       | null: false       |
+| user_id | references | foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+has_many :danger_places
+has_many :places, through: :danger_places
 
-* Services (job queues, cache servers, search engines, etc.)
+## Places Table
 
-* Deployment instructions
+| column  | types      | options           |
+| ------- | ---------- | ----------------- |
+| title   | string     | null: false       |
+| content | text       | null: false       |
+| user_id | references | foreign_key: true |
 
-* ...
+### Association
+
+has_many :danger_places
+has_many :dangers, through: :danger_places
+
+## Danger_places Table
+
+| column    | types      | options           |
+| --------- | ---------- | ----------------- |
+| danger_id | references | foreign_key: true |
+| places_id | references | foreign_key: true |
+
+### Association
+
+belongs_to :danger
+belongs_to :place
