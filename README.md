@@ -24,8 +24,23 @@ has_many :dangers
 
 ### Association
 
+belongs_to :user
 has_many :danger_places
 has_many :places, through: :danger_places
+has_one :dangerspot
+
+## Dangerspot table
+
+| column    | types      | options           |
+| --------- | ---------- | ----------------- |
+| address   | string     | null: false       |
+| latitude  | float      | null: false       |
+| longitude | float      | null: false       |
+| danger_id | references | foreign_key: true |
+
+### Association
+
+has_one :danger
 
 ## Places Table
 
@@ -37,8 +52,23 @@ has_many :places, through: :danger_places
 
 ### Association
 
+belongs_to :user
 has_many :danger_places
 has_many :dangers, through: :danger_places
+has_one :placespot
+
+## Placespot table
+
+| column    | types      | options           |
+| --------- | ---------- | ----------------- |
+| address   | string     | null: false       |
+| latitude  | float      | null: false       |
+| longitude | float      | null: false       |
+| place_id  | references | foreign_key: true |
+
+### Association
+
+has_one :place
 
 ## Danger_places Table
 

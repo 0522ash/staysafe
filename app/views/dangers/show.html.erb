@@ -1,0 +1,27 @@
+<main class="main">
+  <div class="inner">
+    <div class="danger_wrapper">
+      <p class="danger_hedding">
+        <%= @danger.title %>
+      </p>
+      <%= link_to "by #{@danger.user.name}", "#", class: :danger_user %>
+      <% if current_user == @danger.user%>
+        <div class="danger_manage">
+          <%= link_to "編集する", edit_danger_path, class: :danger_btn %>
+          <%= link_to "削除する", "#", method: :delete, class: :danger_btn %>
+        </div>
+      <% end %>
+      <div class="danger_image">
+        <%= image_tag @danger.image %>
+      </div>
+      <div class="danger_body">
+        <div class="danger_detail">
+          <p class="detail_content">詳細</p>
+          <p class="detail_message">
+            <%= @danger.content %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
