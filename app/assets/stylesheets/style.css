@@ -1,0 +1,268 @@
+
+/* ヘッダー */
+
+.header {
+  background-color: #b6aea1;
+  margin-bottom: 48px;
+  padding: 20px 0;
+
+}
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 200px;
+  border-radius: 3px;
+}
+.nav_logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #07135b;
+  text-decoration: none;
+  user-select: none;
+}
+.nav_logout:hover{
+  opacity: 0.5;
+}
+.nav_btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #07135b;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #07135b solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.nav_btn:hover{
+  color: #fff;
+  background: #07135b;
+}
+
+
+/* フォーム周り */
+.form_wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.form_text {
+  width: 50%;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.actions{
+  margin-bottom: 40px;
+}
+
+.form_btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #b6aea1;
+  border: 1px #b6aea1 solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.form_btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* メイン */
+
+.greeting{
+  margin-bottom: 20px;
+}
+.greeting_link{
+  text-decoration: underline;
+}
+.page-heading {
+  font-size: 30px;
+  margin-bottom: 28px;
+}
+.card_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+}
+.card {
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+}
+.card_img {
+  margin-bottom: 16px;
+}
+.card_title {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.card_summary {
+  font-size: 16px;
+}
+.card_user {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+  text-decoration: underline;
+}
+
+/* 詳細ページ */
+.danger_wrapper{
+  min-height: calc(100vh - 161px);
+}
+.danger_hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.danger_user{
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+}
+.danger_image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.danger_detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.detail_title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.danger_manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+.danger_btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+.danger_btn:hover{
+  color: #fff;
+  background: #999;
+}
+
+/* ユーザーページ */
+.user_wrapper{
+  min-height: calc(100vh - 161px);
+}
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table_col1{
+  text-align: left;
+  font-weight: bold;
+  background: #fafafa;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+  width: 30%;
+  padding: 8px;
+}
+.table_col2{
+  text-align: left;
+  border: 1px solid #f5f5f5;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+}
+.user_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* フッター */
+
+.footer {
+  background-color: #999;
+  padding: 10px 0;
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .danger_image{
+    width: 60%;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .logo {
+    width: 120px;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card_title {
+    font-size: 18px;
+  }
+  .card_summary {
+    font-size: 14px;
+  }
+  .danger_image{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
+  }
+}

@@ -79,5 +79,4 @@ has_one :place
 
 ### Association
 
-belongs_to :danger
 belongs_to :place

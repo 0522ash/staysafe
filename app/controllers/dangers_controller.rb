@@ -14,7 +14,7 @@ class DangersController < ApplicationController
   def create
     @danger = Danger.new(danger_params)
     if @danger.save
-      redirect_to root_path
+      redirect_to dangers_path
     else
       render :new
     end
@@ -32,13 +32,13 @@ class DangersController < ApplicationController
     else
       render :edit
     end
+  end
 
-    def destroy
-      if @danger.destroy
-        redirect_to root_path
-      else
-        redirect_to root_path
-      end
+  def destroy
+    if @danger.destroy
+      redirect_to dangers_path
+    else
+      redirect_to dangers_path
     end
   end
 

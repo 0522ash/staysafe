@@ -8,7 +8,7 @@
       <% if current_user == @danger.user%>
         <div class="danger_manage">
           <%= link_to "編集する", edit_danger_path, class: :danger_btn %>
-          <%= link_to "削除する", "#", method: :delete, class: :danger_btn %>
+          <%= link_to "削除する", danger_path, method: :delete, class: :danger_btn %>
         </div>
       <% end %>
       <div class="danger_image">
