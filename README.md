@@ -11,8 +11,10 @@
 
 ### Association
 
-has_many :places
 has_many :dangers
+has_many :dangerposts
+has_many :places
+has_many :placeposts
 
 ## Dangers Table
 
@@ -26,6 +28,36 @@ has_many :dangers
 
 has_many :danger_places
 has_many :places, through: :danger_places
+<<<<<<< Updated upstream
+=======
+has_one :dangerpost
+
+## dangerpost Table
+
+| column | types      | options           |
+| ------ | ---------- | ----------------- |
+| danger | references | foreign_key: true |
+| user   | references | foreign_key: true |
+
+### Association
+
+belongs_to :user
+belongs_to :danger
+has_one :dangerlocation
+
+## Dangerlocation table
+
+| column    | types      | options           |
+| --------- | ---------- | ----------------- |
+| address   | string     | null: false       |
+| latitude  | float      | null: false       |
+| longitude | float      | null: false       |
+| danger_id | references | foreign_key: true |
+
+### Association
+
+belongs_to :dangerpost
+>>>>>>> Stashed changes
 
 ## Places Table
 
@@ -39,6 +71,36 @@ has_many :places, through: :danger_places
 
 has_many :danger_places
 has_many :dangers, through: :danger_places
+<<<<<<< Updated upstream
+=======
+has_one :placepost
+
+## placepost Table
+
+| column | types      | options           |
+| ------ | ---------- | ----------------- |
+| place  | references | foreign_key: true |
+| user   | references | foreign_key: true |
+
+### Association
+
+belongs_to :user
+belongs_to :place
+has_one :placelocation
+
+## Placelocation table
+
+| column    | types      | options           |
+| --------- | ---------- | ----------------- |
+| address   | string     | null: false       |
+| latitude  | float      | null: false       |
+| longitude | float      | null: false       |
+| place_id  | references | foreign_key: true |
+
+### Association
+
+belongs_to :placepost
+>>>>>>> Stashed changes
 
 ## Danger_places Table
 
@@ -49,5 +111,10 @@ has_many :dangers, through: :danger_places
 
 ### Association
 
+<<<<<<< Updated upstream
 belongs_to :danger
 belongs_to :place
+=======
+belongs_to :place
+belongs_to :danger
+>>>>>>> Stashed changes
