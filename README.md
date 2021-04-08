@@ -46,7 +46,6 @@ has_one :dangerlocation
 
 ## Dangerlocation table
 
-
 | column    | types      | options           |
 | --------- | ---------- | ----------------- |
 | address   | string     | null: false       |
@@ -55,7 +54,6 @@ has_one :dangerlocation
 | danger_id | references | foreign_key: true |
 
 ### Association
-
 
 belongs_to :dangerpost
 
