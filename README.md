@@ -26,10 +26,9 @@ has_many :placeposts
 
 ### Association
 
+belongs_to :user
 has_many :danger_places
 has_many :places, through: :danger_places
-<<<<<<< Updated upstream
-=======
 has_one :dangerpost
 
 ## dangerpost Table
@@ -46,6 +45,9 @@ belongs_to :danger
 has_one :dangerlocation
 
 ## Dangerlocation table
+has_one :dangerspot
+
+## Dangerspot table
 
 | column    | types      | options           |
 | --------- | ---------- | ----------------- |
@@ -56,8 +58,9 @@ has_one :dangerlocation
 
 ### Association
 
+
 belongs_to :dangerpost
->>>>>>> Stashed changes
+
 
 ## Places Table
 
@@ -69,10 +72,9 @@ belongs_to :dangerpost
 
 ### Association
 
+belongs_to :user
 has_many :danger_places
 has_many :dangers, through: :danger_places
-<<<<<<< Updated upstream
-=======
 has_one :placepost
 
 ## placepost Table
@@ -89,6 +91,9 @@ belongs_to :place
 has_one :placelocation
 
 ## Placelocation table
+has_one :placespot
+
+## Placespot table
 
 | column    | types      | options           |
 | --------- | ---------- | ----------------- |
@@ -100,7 +105,7 @@ has_one :placelocation
 ### Association
 
 belongs_to :placepost
->>>>>>> Stashed changes
+
 
 ## Danger_places Table
 
@@ -111,10 +116,6 @@ belongs_to :placepost
 
 ### Association
 
-<<<<<<< Updated upstream
 belongs_to :danger
 belongs_to :place
-=======
-belongs_to :place
-belongs_to :danger
->>>>>>> Stashed changes
+

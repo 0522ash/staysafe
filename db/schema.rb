@@ -11,6 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_04_03_070625) do
+ActiveRecord::Schema.define(version: 2021_04_04_022011) do
+
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +33,16 @@ ActiveRecord::Schema.define(version: 2021_04_03_070625) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+
+  create_table "danger_places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "danger_id"
+    t.bigint "place_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["danger_id"], name: "index_danger_places_on_danger_id"
+    t.index ["place_id"], name: "index_danger_places_on_place_id"
   end
 
   create_table "dangers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,6 +78,8 @@ ActiveRecord::Schema.define(version: 2021_04_03_070625) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "danger_places", "dangers"
+  add_foreign_key "danger_places", "places"
   add_foreign_key "dangers", "users"
   add_foreign_key "places", "users"
 end

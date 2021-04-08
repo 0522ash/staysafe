@@ -9,7 +9,43 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav_left">
+            <%= link_to image_tag("journaly.png", class: :logo), root_path %>
+          </div>
+          <% if user_signed_in? %>
+            <div class="nav_right">
+                      こんにちは、
+              <%= link_to "#{current_user.username}さん", "#", class: :greeting_link%>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav_logout %>
+            </div>
+          <% else %>
+            <div class="nav_right">
+              <%= link_to "ログイン", new_user_session_path, class: :nav_btn %>
+              <%= link_to "新規登録", new_user_registration_path, class: :nav_btn %>
+            </div>
+          <% end %>
+          <div class="nav_right">
+          <% unless current_page?(root_path) %>
+            <%= link_to "トップページに戻る", root_path, class: :nav_btn %>
+          <% end %>
+
+          <% unless current_page?(dangers_path) %>
+            <%= link_to "危険地域を見る", dangers_path, class: :nav_btn %>
+          <% end %>
+          <% unless current_page?(places_path) %>
+            <%= link_to "観光情報を見る", places_path, class: :nav_btn %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer class="footer">
+    </footer>
   </body>
 </html>
