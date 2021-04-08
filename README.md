@@ -45,9 +45,7 @@ belongs_to :danger
 has_one :dangerlocation
 
 ## Dangerlocation table
-has_one :dangerspot
 
-## Dangerspot table
 
 | column    | types      | options           |
 | --------- | ---------- | ----------------- |
@@ -91,9 +89,6 @@ belongs_to :place
 has_one :placelocation
 
 ## Placelocation table
-has_one :placespot
-
-## Placespot table
 
 | column    | types      | options           |
 | --------- | ---------- | ----------------- |
