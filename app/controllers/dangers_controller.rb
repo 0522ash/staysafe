@@ -45,7 +45,7 @@ class DangersController < ApplicationController
   private
 
   def danger_params
-    params.require(:danger).permit(:title, :content, :image).merge(user_id: current_user.id)
+    params.require(:danger).permit(:title, :content, :image, :address, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
   def contributor_confirmation
