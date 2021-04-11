@@ -58,3 +58,5 @@ gem 'devise'
 gem 'geocoder'
 
 gem 'dotenv-rails'
+
+gem 'news-api'
