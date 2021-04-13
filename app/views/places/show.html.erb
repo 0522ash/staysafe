@@ -1,26 +1,31 @@
 <main class="main">
   <div class="inner">
-    <div class="place_wrapper">
-      <p class="place_hedding">
+    <div class="wrapper">
+      <p class="hedding">
         <%= @place.title %>
       </p>
-      <%= link_to "by #{@place.user.name}", "#", class: :place_user %>
+      <%= link_to "by #{@place.user.name}", "#", class: :user %>
       <% if current_user == @place.user%>
-        <div class="place_manage">
-          <%= link_to "編集する", edit_place_path, class: :place_btn %>
-          <%= link_to "削除する", place_path, method: :delete, class: :place_btn %>
+        <div class="manage">
+          <%= link_to "編集する", edit_place_path, class: :btn %>
+          <%= link_to "削除する", place_path, method: :delete, class: :btn %>
         </div>
       <% end %>
-      <div class="place_image">
+      <div class="image">
         <%= image_tag @place.image %>
       </div>
-      <div class="place_body">
-        <div class="place_detail">
-          <p class="detail_content">詳細</p>
-          <p class="detail_message">
-            <%= @place.content %>
-            <%= @place.address %>
-          </p>
+      <div class="body">
+        <div class="detail">
+          <ul>
+            <li class="detail_content">
+              詳細
+              <%= @place.content %>
+            </li>
+            <li class="detail_address">
+              住所
+              <%= @place.address %>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

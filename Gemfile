@@ -60,3 +60,5 @@ gem 'geocoder'
 gem 'dotenv-rails'
 
 gem 'news-api'
+
+gem 'active_hash'

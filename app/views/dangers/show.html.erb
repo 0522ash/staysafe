@@ -1,26 +1,31 @@
 <main class="main">
   <div class="inner">
-    <div class="danger_wrapper">
-      <p class="danger_hedding">
+    <div class="wrapper">
+      <p class="hedding">
         <%= @danger.title %>
       </p>
-      <%= link_to "by #{@danger.user.name}", "#", class: :danger_user %>
-      <% if current_user == @danger.user%>
-        <div class="danger_manage">
-          <%= link_to "編集する", edit_danger_path, class: :danger_btn %>
-          <%= link_to "削除する", danger_path, method: :delete, class: :danger_btn %>
+      <%= link_to "by #{@danger.user.name}", "#", class: :user %>
+      <% if current_user == @danger.user %>
+        <div class="manage">
+          <%= link_to "編集する", edit_danger_path, class: :btn %>
+          <%= link_to "削除する", danger_path, method: :delete, class: :btn %>
         </div>
       <% end %>
-      <div class="danger_image">
+      <div class="image">
         <%= image_tag @danger.image %>
       </div>
-      <div class="danger_body">
-        <div class="danger_detail">
-          <p class="detail_content">詳細</p>
-          <p class="detail_message">
-            <%= @danger.content %>
-            <%= @danger.address %>
-          </p>
+      <div class="body">
+        <div class="detail">
+          <ul>
+            <li class="detail_content">
+              詳細
+              <%= @danger.content %>
+            </li>
+            <li class="detail_address">
+              住所
+              <%= @danger.address %>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -54,8 +59,7 @@
   }
 </script>
 
-<script async defer
-              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
 
 <div id="map"></div>
+

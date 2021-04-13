@@ -128,27 +128,27 @@
 }
 
 /* 詳細ページ */
-.danger_wrapper{
+.wrapper{
   min-height: calc(100vh - 161px);
 }
-.danger_hedding{
+.hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.danger_user{
+.user{
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.danger_image{
+.image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.danger_detail{
+.detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -158,12 +158,12 @@
   font-size: 20px;
   font-weight: bold;
 }
-.danger_manage{
+.manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.danger_btn{
+.btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -175,7 +175,7 @@
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.danger_btn:hover{
+.btn:hover{
   color: #fff;
   background: #999;
 }
@@ -236,7 +236,7 @@
     width: 48%;
     margin-bottom: 40px;
   }
-  .danger_image{
+  .image{
     width: 60%;
   }
 }
@@ -259,7 +259,7 @@
   .card_summary {
     font-size: 14px;
   }
-  .danger_image{
+  .image{
     width: 100%;
   }
   .table{

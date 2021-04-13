@@ -1,7 +1,7 @@
 <div class="card">
   <%= link_to image_tag(danger.image, class: :card_img ), danger_path(danger) %>
   <div class="card_body">
-    <%= link_to danger.title, danger_path(danger), class: :card_title%>
+    <%= link_to danger.address, danger_path(danger), class: :card_title%>
     <p class="card_summary">
       <%= danger.content %>
     </p>
